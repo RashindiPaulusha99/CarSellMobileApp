@@ -26,6 +26,8 @@ router.get('/:id',async (req, res) =>{
 
 router.post('/',async (req,res) => {
     const user = new Car({
+        date:req.body.date,
+        location:req.body.location,
         brand:req.body.brand,
         fuelType:req.body.fuelType,
         seats:req.body.seats,
@@ -46,6 +48,8 @@ router.post('/',async (req,res) => {
 router.put('/:id',async (req,res) =>{
     try {
         const register = await Car.findById(req.params.id)
+        register.date = req.body.date
+        register.location = req.body.location
         register.brand = req.body.brand
         register.fuelType = req.body.fuelType
         register.seats = req.body.seats
