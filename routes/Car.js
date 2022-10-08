@@ -29,11 +29,7 @@ router.post('/',async (req,res) => {
         date:req.body.date,
         location:req.body.location,
         brand:req.body.brand,
-        fuelType:req.body.fuelType,
-        seats:req.body.seats,
-        transmissionType:req.body.transmissionType,
-        price:req.body.price,
-        distance:req.body.distance
+        price:req.body.price
     })
 
     try {
@@ -51,11 +47,8 @@ router.put('/:id',async (req,res) =>{
         register.date = req.body.date
         register.location = req.body.location
         register.brand = req.body.brand
-        register.fuelType = req.body.fuelType
-        register.seats = req.body.seats
-        register.transmissionType = req.body.transmissionType
         register.price = req.body.price
-        register.distance = req.body.distance
+       
         const response = await register.save()
 
         res.json(response)
