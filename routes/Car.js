@@ -26,6 +26,7 @@ router.get('/:id',async (req, res) =>{
 
 router.post('/',async (req,res) => {
     const user = new Car({
+        image:req.body.image,
         date:req.body.date,
         location:req.body.location,
         brand:req.body.brand,
@@ -44,11 +45,12 @@ router.post('/',async (req,res) => {
 router.put('/:id',async (req,res) =>{
     try {
         const register = await Car.findById(req.params.id)
+        register.image = req.body.image
         register.date = req.body.date
         register.location = req.body.location
         register.brand = req.body.brand
         register.price = req.body.price
-       
+
         const response = await register.save()
 
         res.json(response)
