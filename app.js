@@ -1,10 +1,10 @@
 const express = require('express')
 const mongoose = require('mongoose')
-const user = require('./routes/user')
+const car = require('./routes/Car')
 const posts = require('./routes/posts')
 
 const app=express()
-const port = 4002
+const port = 4000
 
 const url = 'mongodb://127.0.0.1/carSellMobileApp'
 
@@ -17,7 +17,7 @@ con.on("open", () => {
 
 app.use(express.json())
 
-app.use('/user', user)
+app.use('/car', car)
 app.use('/posts', posts)
 
 app.listen(port, () => {

@@ -1,23 +1,15 @@
 const mongoose = require('mongoose')
 
 const postsSchema = new mongoose.Schema({
-    userId:{
+    fullname:{
         type:String,
         required:true
     },
-    date:{
-        type:Date,
-        required:true
-    },
-    time:{
+    username:{
         type:String,
         required:true
     },
-    title:{
-        type:String,
-        required:true
-    },
-    body:{
+    password:{
         type:String,
         required:true
     }
