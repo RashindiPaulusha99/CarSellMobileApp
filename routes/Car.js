@@ -30,7 +30,8 @@ router.post('/',async (req,res) => {
         date:req.body.date,
         location:req.body.location,
         brand:req.body.brand,
-        price:req.body.price
+        price:req.body.price,
+        description:req.body.description
     })
 
     try {
@@ -50,7 +51,7 @@ router.put('/:id',async (req,res) =>{
         register.location = req.body.location
         register.brand = req.body.brand
         register.price = req.body.price
-
+        register.description = req.body.description
         const response = await register.save()
 
         res.json(response)
